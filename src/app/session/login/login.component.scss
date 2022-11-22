@@ -1,0 +1,88 @@
+.p-add-btn {
+	width: 100%;
+	height: 35px;
+}
+.fs-24{
+	font-size: 24px;
+}
+.fs-32{
+	font-size: 32px;
+}
+.bg-login{
+	justify-content: center;
+    align-items: center;
+    display: flex;
+	
+}
+
+.w-95{
+	width: 95%;
+}
+.w-100{
+	width: 100%;
+}
+.t-end{
+	text-align: end;
+}
+.t-white{
+	color: white;
+}
+
+////mobile/////
+@media (max-width: 575.98px)  { 
+	.w-100{
+		width: 90% !important;
+	}
+}
+
+//////ipad///////
+@media (min-width: 576px) and (max-width: 991.98px){
+
+}
+
+/////ipad pro///////
+@media (min-width: 992px) and (max-width: 1199.98px){
+	.col-1 .right{
+		display: none;
+	}
+
+	.col-1 .left{
+		display: none;
+	}
+}
+// ----------------bg-------------
+body{
+	margin: 0;
+	padding: 0;
+}
+section{
+	font-size:3rem;
+	position:relative;
+	height:100vh;
+	
+	h1{
+		position:absolute;
+		top:40%;
+		left:50%;
+		transform:translate(-50%,-50%);
+	}
+}
+
+
+
+
+section:nth-child(odd){
+	// background-color: grey;
+	color:white;
+	  background-color: #FBC02D;
+
+}
+#myVideo {
+	position: fixed;
+	// top: -7%;
+	right: 0;
+	bottom: 0;
+	width: 100%; 
+	z-index: 500;
+	min-height: 100%;
+  }

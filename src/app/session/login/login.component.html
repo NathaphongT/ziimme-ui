@@ -1,0 +1,65 @@
+<!-- <video [muted]="true" autoplay muted loop id="myVideo" *ngIf="!_loadingvideo">
+	<source src="assets/img/Logo3.mp4" type="video/mp4">
+	Your browser does not support HTML5 video.
+</video> -->
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="large" color="#fff" type="square-jelly-box">
+	<p style="color: white; text-align: center;"> กรุณารอสักครู่... </p>
+</ngx-spinner>
+<canvas id="nodes" class="w-100 position-absolute h-100" style="top: 0;"></canvas>
+<div class="login-wrapper " *ngIf="_loadingvideo">
+	}
+	<!-- START Login Background Pic Wrapper-->
+	<div class="bg-pic bg-login">
+		<div class="bg-caption text-white p-l-20 m-b-20">
+			<div class="row">
+				<div class="col-12">
+					<img class="w-100" src="assets/img/icon_social.png"
+						style="border-radius: 20px; position: relative; top: 15px;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-1 d-md-none"></div>
+				<div class="col-10 col-md-12">
+					<!-- START Login Form -->
+					<form class="" role="form" #loginForm="ngForm" (ngSubmit)="login(userName,password)">
+						<div pgFormGroupDefault class="form-group form-group-default required"
+							[class.has-error]="loginUserName.invalid && (loginUserName.dirty || loginUserName.touched)">
+							<label>Username</label>
+							<input type="text" id="userName" name="userName" [(ngModel)]="userName"
+								#loginUserName="ngModel" required placeholder="Enter Username" class="form-control">
+						</div>
+						<div *ngIf="loginUserName.invalid && (loginUserName.dirty || loginUserName.touched)">
+							<label *ngIf="loginUserName.errors.required" class="error">This field is required.</label>
+						</div>
+						<div pgFormGroupDefault class="form-group form-group-default"
+							[class.has-error]="loginPassword.invalid && (loginPassword.dirty || loginPassword.touched)">
+							<label>Password</label>
+							<input type="password" class="form-control" placeholder="Enter Password" id="password"
+								name="password" [(ngModel)]="password" #loginPassword="ngModel" required>
+						</div>
+						<div *ngIf="loginPassword.invalid && (loginPassword.dirty || loginPassword.touched)">
+							<label *ngIf="loginPassword.errors.required" class="error">This field is required.</label>
+						</div>
+						<div class="row">
+							<div class="col-md-6 no-padding sm-p-l-10">
+								<div class="form-check" style="padding-left: 0;">
+									<input type="checkbox" value="1" id="checkbox1" [(ngModel)]="remember_me"
+										name="remember_me">
+									<label for="checkbox1" style="padding-left: 20px;">Remember me</label>
+								</div>
+							</div>
+
+						</div>
+						<!-- END Form Control-->
+						<button class="btn btn-complete m-t-10 p-add-btn" type="submit"
+							[class.disabled]="loginForm.invalid" [disabled]="loginForm.invalid">เข้าสู่ระบบ</button>
+					</form>
+					<!--END Login Form-->
+				</div>
+				<div class="col-1 d-md-none"></div>
+			</div>
+		</div>
+		<!-- END Background Caption-->
+	</div>
+</div>

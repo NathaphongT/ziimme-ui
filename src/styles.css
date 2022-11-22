@@ -1,3 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* You can add global styles to this file, and also import other style files */
+.custom-icon {
+  cursor: pointer;
+}
+
+.custom-icon-menu {
+  width: 27px;
+}
+
+.custom-icon-user {
+  width: 40px;
+}
+
+.custom-icon-edit {
+  width: 28px;
+}
+.custom-icon-view {
+  width: 29px;
+}
+.custom-icon-delete {
+  width: 25px;
+}
+.custom-icon-add {
+  width: 25px;
+}
+
+.modal{
+  border-radius: 8px;
+}

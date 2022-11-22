@@ -1,0 +1,4 @@
+<p [innerHTML]="highlight()">{{ content }}</p>
+<a  *ngIf="!isContentToggled" (click)="toggleContent()" i18n style="color:#FF5722; cursor: default;    font-weight: 600;">แสดงเพิ่มเติม</a>
+<a *ngIf="isContentToggled" (click)="toggleContent()" i18n style="color:#FF5722; cursor: default;    font-weight: 600;">แสดงน้อยลง</a>
+ 

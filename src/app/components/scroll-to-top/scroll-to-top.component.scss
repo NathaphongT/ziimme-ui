@@ -1,0 +1,30 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    opacity: 0;
+    z-index: 999;
+    transition: all 0.2s ease;
+    padding: 5px;
+}
+.show-scrollTop {
+    opacity: 1;
+    // transition: all 0.2s ease;
+    transform: translateY(0)
+}
+.btn-to-top {
+    position: sticky;
+    line-height: 3rem;
+    pointer-events: all;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    padding: 0.25rem;
+    border: 1px solid #254568;
+    background-color: #d6e3f0;
+    transition: all 0.2s ease-in-out;
+    &:hover,
+    &:focus {
+        transform: scale(1.1);
+    }
+}

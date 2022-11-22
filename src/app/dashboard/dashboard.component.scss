@@ -1,0 +1,378 @@
+// Widget related classes
+.widget-11-2 .widget-11-2-table {
+  height: 273px;
+}
+.cm-block{
+padding: 30px;
+height: 470px;
+}
+.cm-title{
+font-size: 20px;
+font-weight: 500;
+}
+@media (max-width: 991px) {
+:host ::ng-deep .share-other {
+  .card-content {
+    min-height: 250px;
+  }
+}
+}
+.profile-image {
+width: 40px;
+height: 40px;
+float: left;
+margin-right: 5px;
+border: 2px solid #fff;
+}
+.card-header{
+display: none !important;
+}
+.card{
+// margin-bottom: 0px !important;
+}
+.cm-logo {
+// margin-top: -15px;
+
+// margin-left: -15px;
+
+}
+.mb--15{
+margin-bottom: -15px !important;
+}
+.cm-logo-name {
+font-size: 16px;
+padding-top: 7px;
+color: black;
+}
+.cm-txt-source {
+text-align: end;
+font-size: 10px;
+}
+.cm-info{
+font-size: 13px;
+
+
+}
+.t-end{
+text-align: end;
+}
+.cm-logo-count{
+font-size: 20px;
+margin-top: 20px;
+color: black;
+text-align: end;
+}
+.cm-chart-title {
+margin-top: 15px;
+color: black;
+font-weight: 600;
+}
+.cm-block> .card>.card-body{
+padding-bottom: 5px !important;
+}
+.btn-hashtag{
+background-color: #d1daed;
+border: none;
+color: black;
+font-size: 12px;
+margin-right: 5px;
+margin-bottom: 5px;
+}
+.m-t-20{
+margin-top: 20px;
+}
+
+.cm-barchart{
+height: 565px !important;
+}
+.demo-chart{
+height: 250px !important;
+}
+.cm-logo-case{
+font-size: 16px;
+padding-top: 5px;
+color: black;
+}
+.cm-green{
+color: gray;
+padding-right: 5px;
+font-size: 18px;
+padding-left: 5px;
+}
+.cm-red{
+color: red;
+padding-right: 5px;
+font-size: 18px;
+padding-left: 5px;
+}
+.cm-yellow{
+color: yellow;
+padding-right: 5px;
+font-size: 18px;
+padding-left: 5px;
+}
+.line-chart {
+height: 330px !important;
+}
+
+.block-source{
+padding-right: 0px !important;
+}
+
+.block-source:last-child {
+padding-right: 15px !important;
+}
+
+
+
+.cm-info .tooltip {
+background: black;
+bottom: 100%;
+color: #fff;
+display: block;
+right: 0;
+margin-bottom: 15px;
+font-size: 12px;
+opacity: 0;
+padding: 10px;
+pointer-events: none;
+position: absolute;
+width: 80%;
+-webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+   -o-transform: translateY(10px);
+    transform: translateY(10px);
+-webkit-transition: all .25s ease-out;
+  -moz-transition: all .25s ease-out;
+  -ms-transition: all .25s ease-out;
+   -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+   -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.cm-info .tooltip:before {
+bottom: -20px;
+content: " ";
+display: block;
+height: 20px;
+left: 0;
+position: absolute;
+width: 100%;
+}
+
+/* CSS Triangles - see Trevor's post */
+.cm-info .tooltip:after {
+border-left: solid transparent 10px;
+border-right: solid transparent 10px;
+border-top: solid black 10px;
+bottom: -10px;
+content: " ";
+height: 0;
+right: 10px;
+margin-left: -10px;
+position: absolute;
+width: 0;
+}
+
+.cm-info:hover .tooltip {
+opacity: 1;
+pointer-events: auto;
+-webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+   -o-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .cm-info .tooltip {
+display: none;
+}
+
+.lte8 .cm-info:hover .tooltip {
+display: block;
+}
+
+.profile-name {
+  font-size: 13px;
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+p.profile-username {
+color: blue;
+margin-bottom: 0px;
+font-size: 12px;
+}
+.profile-info {
+border-bottom: 1px solid #ddd;
+}
+.budget-remark {
+color: red;
+font-size: 12px;
+font-family: 'CSChatThaiUI';
+}
+.m-r-15{
+margin-right: 15px;
+}
+.active{
+color: #1178f2;
+font-weight: 600;
+}
+.cm-menu{
+cursor: pointer;
+}
+
+::ng-deep.pg-select {
+box-sizing: border-box;
+display: inline-block;
+position: relative;
+color: #47525e;
+font-size: 12px;
+transition: background 0.3s ease-in-out;
+}
+::ng-deep.pg-select-selection {
+outline: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+box-sizing: border-box;
+display: block;
+background-color: #fff;
+border-radius: 2px;
+border: 1px solid rgba(6, 18, 35, 0.14);
+transition: all 0.3s ease-in-out;
+}
+::ng-deep.pg-select-selection--single {
+height: 35px;
+position: relative;
+cursor: pointer;
+}
+::ng-deep.form-group-default-select2 .pg-select-selection {
+margin-top: 20px;
+border: 0;
+}
+::ng-deep.pg-select-selection__rendered {
+display: block;
+margin-left: 12px;
+margin-right: 12px;
+position: relative;
+line-height: 35px;
+}
+
+element.style {
+}
+::ng-deep.pg-select-selection__rendered {
+  display: block;
+  margin-left: 12px;
+  margin-right: 12px;
+  position: relative;
+  line-height: 35px;
+}
+
+::ng-deep.pg-select-selection--single {
+  height: 35px;
+  position: relative;
+  cursor: pointer;
+}
+::ng-deep.pg-select-arrow {
+position: absolute;
+top: 50%;
+right: 13px;
+line-height: 1;
+margin-top: -10px;
+color: #353f4d;
+font-family: "pages-icon";
+font-size: 20px;
+}
+
+
+::ng-deep.pg-select-dropdown {
+top: 100% !important;
+left: 0 !important;
+position: relative !important;
+width: 100%;
+margin-top: 0;
+margin-bottom: 4px;
+border: 1px solid rgba(6, 18, 35, 0.14);
+border-top: 0;
+border-radius: 0;
+border-bottom-right-radius: 2px;
+border-bottom-left-radius: 2px;
+padding-top: 5px;
+z-index: 790;
+box-shadow: 0 4px 5px rgb(0 0 0 / 15%);
+}
+::ng-deep.pg-select-dropdown {
+background-color: #fff;
+box-shadow: "none";
+border-radius: 2px;
+box-sizing: border-box;
+z-index: 999;
+left: -9999px;
+top: -9999px;
+position: absolute;
+outline: none;
+overflow: hidden;
+font-size: 12px;
+}
+::ng-deep.pg-select-dropdown-menu-item {
+position: relative;
+display: block;
+padding: 6px 8px;
+padding-left: 1em;
+font-weight: normal;
+color: #353f4d;
+white-space: nowrap;
+border-radius: 3px;
+cursor: pointer;
+overflow: hidden;
+text-overflow: ellipsis;
+transition: background 0.3s ease;
+font-size: 14px;
+}
+
+::ng-deep.pg-select-dropdown {
+background-color: #fff;
+box-shadow: "none";
+border-radius: 2px;
+box-sizing: border-box;
+z-index: 999;
+left: -9999px;
+top: -9999px;
+position: absolute;
+outline: none;
+overflow: hidden;
+font-size: 12px;
+}
+
+#myVideo {
+position: fixed;
+right: 0;
+bottom: 0;
+min-width: 100%;
+min-height: 100%;
+}
+.datagrid{
+  margin: auto !important;
+}
+.card-row{
+  width: 70%;
+  margin: auto;
+}
+.card-bg{
+  // background-color: #F6F7FCDE;
+
+}
+.num-count{
+  margin-top:-15px; color:#143563;float: right;
+}
+.h4-style{
+  margin: 0px 0px 0px 0px;
+}

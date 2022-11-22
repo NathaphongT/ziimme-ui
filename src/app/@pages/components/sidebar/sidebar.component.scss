@@ -1,0 +1,56 @@
+@import '../../../@pages/styles/manage-colors';
+@mixin menu-active {
+    width: calc(100% - 20px)!important;
+    background: rgba(61, 61, 61, 0.2);
+    border: 0.5px solid rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
+    backdrop-filter: blur(40px);
+    border-radius: 10px;
+}
+
+.page-sidebar {
+    background-color: $main;
+    background-image: url('/assets/img/bg-sidebar.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    .sidebar-menu {
+        .menu-items {
+            li {
+                a {
+                    font-family: 'Kanit'!important;
+                    color: $white;
+                }
+                &.open {
+                    border-left: initial;
+                    a {
+                        color: $white;
+                    }
+                    >a {
+                        @include menu-active;
+                        margin: 0px 10px;
+                    }
+                }
+                &:hover,
+                &.active {
+                    >a {
+                        color: $warning!important;
+                    }
+                }
+            }
+        }
+    }
+    .sidebar-header {
+        background-color: initial;
+    }
+}
+
+// START: custom Theme
+.cus {
+    &-menu-icon {
+        float: left;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+}
+
+// END: custom Theme

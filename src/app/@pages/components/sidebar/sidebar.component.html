@@ -1,0 +1,35 @@
+<!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
+<div class="sidebar-overlay-slide from-top" [class.show]="drawer">
+    <ng-template [ngTemplateOutlet]="sideBarOverlay"></ng-template>
+</div>
+<!-- END SIDEBAR MENU TOP TRAY CONTENT-->
+<!-- BEGIN SIDEBAR MENU HEADER-->
+<div class="sidebar-header">
+    <ng-template [ngTemplateOutlet]="sideBarHeader"></ng-template>
+</div>
+<!-- END SIDEBAR MENU HEADER-->
+<!-- START USER -->
+<div class="sidebar-user">
+    <div class="row">
+        <div class="col-4">
+            <img class="user-img" src="/assets/img/profiles/profiletest.png" width="20" height="20">
+        </div>
+        <div class="col-8 ps-0">
+            <span>สวัสดี</span>
+            <p class="m-0">{{display_name}}</p>
+        </div>
+    </div>
+    <!-- START SIDEBAR TOGGLE -->
+    <a href="javascript:void(0);" class="toggle-sidebar toggle-menu" (click)="toggleMenu()">
+        <i class="fa {{icon_toggle}}" aria-hidden="true"></i>
+    </a>
+    <!-- END SIDEBAR TOGGLE -->
+</div>
+<!-- END USER -->
+<!-- START SIDEBAR MENU -->
+<div class="sidebar-menu">
+    <!-- BEGIN SIDEBAR MENU ITEMS-->
+    <ng-template [ngTemplateOutlet]="menuItems"></ng-template>
+    <div class="clearfix"></div>
+</div>
+<!-- END SIDEBAR MENU -->

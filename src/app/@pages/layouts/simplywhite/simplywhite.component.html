@@ -1,0 +1,208 @@
+<!-- WRAP LAYOUT IF BOXED -->
+<div class="container" *ngIf="_boxed; else basicLayoutBlock">
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+</div>
+<ng-template #basicLayoutBlock>
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+</ng-template>
+<!-- YOUR LAYOUT CONTENT GOES INSIDE HERE -->
+<ng-template #contentTpl>
+    <!-- PAGE SIDEBAR -->
+    <pg-sidebar>
+        <ng-template #sideBarOverlay>
+            <div class="row">
+                <div class="col-xs-6 no-padding">
+                    <a href="javascript:void(0)" class="p-l-40"><img src="assets/img/demo/social_app.svg"
+                            alt="socail"></a>
+                </div>
+                <div class="col-xs-6 no-padding">
+                    <a href="javascript:void(0)" class="p-l-10"><img src="assets/img/demo/email_app.svg"
+                            alt="socail"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 m-t-20 no-padding">
+                    <a href="javascript:void(0)" class="p-l-40"><img src="assets/img/demo/calendar_app.svg"
+                            alt="socail"></a>
+                </div>
+                <div class="col-xs-6 m-t-20 no-padding">
+                    <a href="javascript:void(0)" class="p-l-10"><img src="assets/img/demo/add_more.svg"
+                            alt="socail"></a>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #sideBarHeader>
+            <h5 class="text-center" style="    display: flex; flex-direction: column;">Social Media</h5>
+            <!-- <img src="assets/img/icon_social.png" pgRetina src2x="/assets/img/icon.png" alt="logo" class="" height="50"> -->
+        </ng-template>
+        <ng-template #menuItems>
+            <pg-menu-items [Items]="menuLinks">
+            </pg-menu-items>
+        </ng-template>
+    </pg-sidebar>
+    <!-- PAGE CONTAINER -->
+    <page-container>
+        <pg-header [boxed]="_boxed">
+            <!-- START MOBILE SIDEBAR TOGGLE -->
+            <a id="side-menu" href="javascript:void(0);" class="btn-icon-link text-white toggle-sidebar d-lg-none"
+                (click)="toggleMobileSidebar()">
+                <i class="pg-icon">menu</i>
+            </a>
+            <!-- END MOBILE SIDEBAR TOGGLE -->
+            <div class="d-flex align-items-center">
+                <!-- START EMAIL MOBILE TOGGLE -->
+                <a href="javascript:void(0);" class="toggle-secondary-sidebar align-items-center"
+                    (click)="toggleSecondarySideBar()" *ngIf="_layoutOption === 'email'">
+                    <span class="d-flex align-items-center">Inbox <span class="text-info">(12)</span> <span
+                            class="pg-icon">drop_down</span></span>
+                </a>
+                <!-- END EMAIL MOBILE TOGGLE -->
+                <div class="brand" [class.d-none]="_layoutOption === 'email'"
+                    [class.d-xl-block]="_layoutOption === 'email'" [class.d-lg-block]="_layoutOption === 'email'">
+                    <img src="assets/img/icon.png" alt="logo" pgRetina src1x="assets/img/icon.png"
+                        src2x="assets/img/icon.png" height="50" class="navbar-logo">
+                </div>
+                <h2 class="search-link d-none d-lg-block d-xl-block"><img src="/assets/img/icon-navbar.png"
+                        alt="ระบบตัวตนเสมือนเพื่อสืบค้นผู้กระทำผิดบนเครือข่ายออนไลน์">
+                    ระบบตัวตนเสมือนเพื่อสืบค้นผู้กระทำผิดบนเครือข่ายออนไลน์
+                </h2>
+            </div>
+            <div class="d-flex align-items-center">
+                <!-- START NOTIFICATION LIST -->
+                <ul class="d-lg-inline-block d-none notification-list no-margin no-style p-l-20 p-r-5">
+                    <li class="p-r-10 inline">
+                        <div class="dropdown" dropdown>
+                            <a href="javascript:;" id="notification-center" class="header-icon btn-icon-link"
+                                dropdownToggle>
+                                <i class="fas fa-bell icon-bell cl-white"></i>
+                                <span *ngIf="noti_count !== 0" class="bubble">{{noti_count}}</span>
+                            </a>
+                            <!-- START Notification Dropdown -->
+                            <div *dropdownMenu
+                                class="dropdown-menu notification-toggle cm-notification-toggle ccard-b-a"
+                                style="right: 0px !important;">
+                                <!-- START Notification -->
+                                <div class="notification-panel cnoti-panel ccard-b-a">
+                                    <!-- START Notification Body-->
+                                    <div class="notification-body scrollable">
+                                        <!-- START Notification Item Unread -->
+                                        <div class="notification-item unread clearfix">
+                                            <!-- START Notification Item Right Side-->
+                                            <div class="option" tooltip="mark as read" placement="right">
+                                                <a href="javascript:void(0)" class="mark"></a>
+                                            </div>
+                                            <!-- END Notification Item Right Side-->
+                                        </div>
+                                        <!-- START Notification Item Unread -->
+                                        <!-- START Notification Item All -->
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h4 class="fs-h4-bold">การแจ้งเตือน</h4>
+                                                </div>
+                                                <div class="col-12 mb-3">
+                                                    <button class="btn btn-primary mr-2 font-name cbtn-outline-main"><a
+                                                            [routerLink]="['/home/forms/monitor']">ทั้งหมด</a></button>
+                                                    <button class="btn btn-primary font-name cbtn-outline-main"><a
+                                                            [routerLink]="['/home/forms/monitor']">ยังไม่ได้อ่าน</a></button>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-between">
+                                                    <div class="p-2">ใหม่</div>
+                                                    <div class="p-2"><a [routerLink]="['/home/forms/monitor']"
+                                                            class="cl-default">ดูทั้งหมด</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="cnoti-body">
+                                            <div *ngFor="let item of basicRows"
+                                                class="notification-item clearfix cnoti-item">
+                                                <div class="heading cnoti-bg border-0">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div
+                                                                class="col-3 d-flex justify-content-center align-items-center">
+                                                                <img src="assets/img/notification.png">
+                                                            </div>
+                                                            <div
+                                                                class="col-9 d-flex flex-column justify-content-center align-items-end">
+                                                                <a (click)="NotiRead(item);"
+                                                                    class="text-warning pull-left a-tag a-tag-noti lh">
+                                                                    <span
+                                                                        class="fs-p">{{item.NOTIFICATION_SUBJECT}}</span>
+                                                                </a>
+                                                                <a class="a-tag" (click)="NotiRead(item);">
+                                                                    <span
+                                                                        class="pull-right time">{{myFunc.convertDateTimetoThai(item.NOTIFICATION_DATE)}}</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="option cnoti-bg">
+                                                <a *ngIf="item.FLAG_READ === 'N'" class="mark"></a>
+                                            </div> -->
+                                            </div>
+                                        </div>
+                                        <!-- END Notification Item All -->
+                                    </div>
+                                    <!-- END Notification Body-->
+                                    <!-- START Notification Footer-->
+                                    <div class="notification-footer text-center border-0">
+                                        <!-- <a href="/home/forms/monitor" class="">Read all notifications</a> -->
+                                        <!-- <a data-toggle="refresh" class="portlet-refresh text-black pull-right" href="javascript:void(0)">
+                                            <i class="pg-refresh_new"></i>
+                                        </a> -->
+                                    </div>
+                                    <!-- START Notification Footer-->
+                                </div>
+                                <!-- END Notification -->
+                            </div>
+                            <!-- END Notification Dropdown -->
+                        </div>
+                    </li>
+                </ul>
+                <!-- END NOTIFICATIONS LIST -->
+                <!-- START SEARCH -->
+                <div class="input-group mt-1">
+                    <div class="wrap-search">
+                        <input type="text" class="form-control cinput-default cinput-radius cl-black" id="basic-search"
+                            name="basicSearch" placeholder="ค้นหา.." #basicSearch>
+                        <button type="button" id="basic-add" [routerLink]="['/home/forms/search-keyword']"
+                            class="cbtn-icon-right" (click)="getsearch(basicSearch.value)">
+                            <i class="fa fa-search cl-black"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- END SEARCH -->
+            </div>
+        </pg-header>
+        <div class="page-content-wrapper {{_pageContainerClass}}">
+            <!-- START PAGE CONTENT -->
+            <div class="content {{_contentClass}}">
+                <router-outlet></router-outlet>
+            </div>
+            <!-- END PAGE CONTENT -->
+            <!-- START COPYRIGHT (FOOTER) -->
+            <ng-template [ngIf]="_footer">
+                <div class="container-fluid container-fixed-lg footer cfooter-bg">
+                    <div class="copyright sm-text-center">
+                        <p class="small no-margin pull-left sm-pull-reset">
+                            <span class="cl-default">&copy; 2020 Betimes - Dev Design <b>1112</b></span> &nbsp;
+                            <span class="sm-block">
+                                <a class="m-l-10 m-r-10 cl-warning" href="javascript:void(0)">นโยบายการใช้งาน</a> <a
+                                    class="m-l-10 cl-warning" href="javascript:void(0)">ช่วยเหลือ</a>
+                            </span>
+                        </p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </ng-template>
+            <!-- END COPYRIGHT (FOOTER) -->
+        </div>
+    </page-container>
+    <!-- QUICKSEARCH -->
+    <!-- <app-search-overlay></app-search-overlay> -->
+    <!-- QUICKVIEW -->
+    <app-quickview></app-quickview>
+</ng-template>

@@ -1,0 +1,117 @@
+<div class="container-fluid full">
+  <div class="row">
+    <div class="col-3" style="background-color: #143563;"><img class="ng-tns-c6-1" src="assets/img/newlogo.png"></div>
+    <div class="col-9" style="background-color: #32598F;">
+      <div class="row">
+        <div class="col-1 pt-2"><img class="ng-tns-c6-1" src="assets/img/Component2.png"></div>
+        <div class="col-8 pt-3" style="color:#FCB034; margin-top: -10px; margin-left: -15px;">
+          <h3 class="ng-tns-c6-1">ระบบตัวตนเสมือนเพื่อสืบค้นผู้กระทำผิดบนเครือข่ายออนไลน์</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid full">
+  <div class="row" style="background-color: #e9ecef;
+  padding-left: 15px;">
+    <ol class="breadcrumb font-name">
+      <li class="breadcrumb-item "> <a href="/home/forms/user">Profile</a></li>
+      <li class="breadcrumb-item active" style="font-size: 13px !important; color: #143563;">Dashboard</li>
+    </ol>
+  </div>
+</div>
+<div class="container-fluid m-b-50 mt-5">
+  <div class="row card-row">
+    <div class="col-sm-4">
+      <div class="card card-bg">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3"><img class="ng-tns-c6-1" height="50" src="assets/img/categorydata.png" width="50"></div>
+            <div class="col-8">
+              <h4 class="ng-tns-c6-1 h4-style" id="fontcolor" style="margin-bottom: 15px;">Avatar</h4>
+              <div class="row">
+                <div class="col-6">
+                  <h2 class="ng-tns-c6-1 num-count">{{AVATA_TOTAL}}</h2>
+                </div>
+                <div class="col-6" id="fontcolor">รายการ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card card-bg">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3"><img class="ng-tns-c6-1" height="50" src="assets/img/costblue.png" width="50"></div>
+            <div class="col-8">
+              <h4 class="ng-tns-c6-1 h4-style" id="fontcolor" style="margin-bottom: 15px;">Group</h4>
+              <div class="row">
+                <div class="col-6">
+                  <h2 class="ng-tns-c6-1 num-count">{{GROUP_TOTAL}}</h2>
+                </div>
+                <div class="col-6" id="fontcolor">รายการ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card card-bg">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3"><img class="ng-tns-c6-1" height="50" src="assets/img/iswebsite.png" width="50"></div>
+            <div class="col-8">
+              <h4 class="ng-tns-c6-1 h4-style" id="fontcolor" style="margin-bottom: 15px;">Feed</h4>
+              <div class="row">
+                <div class="col-6">
+                  <h2 class="ng-tns-c6-1 num-count">{{FEED_TOTAL}}</h2>
+                </div>
+                <div class="col-6" id="fontcolor">รายการ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="mt-5">
+          <dx-data-grid class="datagrid" #grid [dataSource]="userlist" keyExpr="AVATAR_ID" [showColumnLines]="false"
+            [wordWrapEnabled]="true" noDataText="ไม่มีข้อมูล" [showRowLines]="true" [columnAutoWidth]="true"
+            [columnHidingEnabled]="true" [showBorders]="true" [rowAlternationEnabled]="true" [showColumnLines]="true"
+            [hoverStateEnabled]="false" [selectedRowKeys]="[]" noDataText="ไม่มีข้อมูล" [remoteOperations]="false"
+            width="70%">
+            <dxo-search-panel [visible]="true" [width]="300" [highlightCaseSensitive]="true"></dxo-search-panel>
+            <dxo-paging [pageSize]="10"></dxo-paging>
+            <dxo-load-panel text="กำลังโหลดข้อมูล..."></dxo-load-panel>
+            <!-- <dxo-search-panel [visible]="true" [width]="200" placeholder="ค้นหา..."></dxo-search-panel> -->
+            <dxo-editing mode="cell" [allowUpdating]="false" [allowDeleting]="false" [allowAdding]="false">
+            </dxo-editing>
+            <!-- <dxo-selection mode="single"></dxo-selection> -->
+            <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 20, 50]" [showInfo]="true">
+            </dxo-pager>
+            <dxi-column dataField="" caption="#" [width]="60" alignment="center" [allowEditing]="false"
+              cellTemplate="cellTemplate"></dxi-column>
+            <dxi-column dataField="AVATAR_DISPLAY_NAME" caption="Name" alignment="center">
+            </dxi-column>
+            <dxi-column dataField="AVATAR_PLATFORM_NAME" caption="Platform" alignment="left">
+            </dxi-column>
+            <dxi-column dataField="GROUP_TOTAL" caption="Group" alignment="left">
+            </dxi-column>
+            <dxi-column dataField="FEED_TOTAL" caption="Feed" alignment="left">
+            </dxi-column>
+            <div *dxTemplate="let cell of 'cellTemplate'">
+              {{ cell.component.pageIndex() * cell.component.pageSize() + cell.rowIndex + 1 }}
+            </div>
+          </dx-data-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,123 @@
+<pg-header extraClass="p-r-0">
+  <div class="header-inner header-md-height">
+    <!-- START MOBILE SIDEBAR TOGGLE -->
+    <a href="javascript:void(0);" class="btn-icon-link header-icon toggle-sidebar d-lg-none" (click)="toggleHorizontalMenuMobile()">
+      <i class="pg-icon">menu</i>
+    </a>
+    <!-- END MOBILE SIDEBAR TOGGLE -->
+    <div class="row">
+      <div class="bg-banner">
+        <div class="no-border d-sm-inline-block col-12">
+          <div class="row">
+            <div class="col-2">
+              <img src="assets/img/logo.png" pgRetina src2x="/assets/img/logo.png" alt="logo" class=""
+              height="65" style="margin-top: -5px;">
+            </div>
+            <div class="col-10">
+              <p class="excise-th">กรมสรรพสามิต</p>
+              <p class="excise-en">The Excise Department</p>
+            </div>
+          </div>
+      </div>
+    </div>
+     
+      
+       <!-- <h2 class="search-link d-none d-lg-block d-xl-block">ระบบการจัดเก็บข้อมูลและประมวลผลข้อมูลสื่อสังคมออนไลน์</h2> -->
+      <!-- START EMAIL MOBILE TOGGLE -->
+      <a href="javascript:void(0);" class="toggle-secondary-sidebar align-items-center"
+        (click)="toggleSecondarySideBar()" *ngIf="_layoutOption === 'email'">
+        <span class="d-flex align-items-center">
+          Inbox <span class="text-info">(12)</span> <span class="pg-icon">drop_down</span>
+        </span>
+      </a>
+      <!-- END EMAIL MOBILE TOGGLE -->
+
+    </div>
+    <div class="d-flex align-items-center">
+	  <!-- START User Info-->
+	     <!-- START User Info-->
+       <div class="pull-left p-r-10 fs-14 font-heading d-lg-inline-block d-none m-l-20">
+        <span class="semi-bold color-white">{{user_name}}</span>
+        <!-- <span class="text-color">stator</span> -->
+      </div>
+      <div class="dropdown pull-right d-lg-block d-none" dropdown>
+        <button class="profile-dropdown-toggle" type="button" dropdownToggle id="profileDropdown"
+          aria-label="profile dropdown">
+          <span class="thumbnail-wrapper d32 circular inline">
+            <img src="assets/img/profiles/admin.png" alt="" pgRetina src1x="assets/img/profiles/admin.png"
+              src2x="assets/img/profiles/admin.png" width="32" height="32">
+          </span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right profile-dropdown" *dropdownMenu role="menu">
+          <a href="#" class="dropdown-item"><span>Signed in as <br /><b>{{user_name}}</b></span></a>
+          <div class="dropdown-divider"></div>
+          <a [routerLink]="['/home/session/login']" (click)="logout();" class="dropdown-item">Logout</a>
+          <!-- <div class="dropdown-divider"></div> -->
+          <!-- <span class="dropdown-item fs-12 hint-text">Friday at 5:27PM</span> -->
+        </div>
+      </div>
+      <!-- END User Info-->
+      <!-- END User Info-->
+      <!-- <a href="javascript:void(0)" class="header-icon btn-icon-link m-l-5 sm-no-margin d-inline-block btn-icon-link"
+        (click)="openQuickView($event)">
+        <i class="pg-icon">menu_add</i>
+      </a> -->
+    </div>
+  </div>
+  <div class="bg-white">
+    <div class="container">
+      <pg-horizontal-menu [Items]="menuItems" HideExtra="-10">
+        <ng-template #mobileSidebarFooter>
+          <!-- <a href="javascript:void(0)" class="search-link d-flex justify-content-between align-items-center d-lg-none"
+            (click)="openSearch($event)">Tap here to search <i class="pg pg-search float-right"></i></a> -->
+        </ng-template>
+      </pg-horizontal-menu>
+    </div>
+  </div>
+</pg-header>
+<div class="page-container ">
+  <!-- START PAGE CONTENT WRAPPER -->
+  <div class="page-content-wrapper {{_pageContainerClass}}">
+    <!-- START PAGE CONTENT -->
+    <div class="content {{_contentClass}}">
+      <!-- <div class="bg-white">
+        <div class="container">
+          <ol class="breadcrumb breadcrumb-alt">
+            <li class="breadcrumb-item">
+              <a href="javascript:void(0)">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </div>
+      </div> -->
+      <router-outlet></router-outlet>
+    </div>
+    <!-- END PAGE CONTENT -->
+    <!-- START COPYRIGHT -->
+    <!-- START CONTAINER FLUID -->
+    <ng-template [ngIf]="_footer">
+      <div class="bg-footer footer">
+        <div class="container container-fixed-lg ">
+          <div class="copyright sm-text-center">
+            <p class="small no-margin pull-left sm-pull-reset">
+              <span class="hint-text">Copyright &copy; 2021 </span>
+              &nbsp;<span class="font-montserrat">กรมสรรพสามิต The Excise Department</span>.&nbsp;
+              <span class="muted">|</span>  <span class="hint-text"> 1488 ถนนนครไชยศรี เขตดุสิต กรุงเทพมหานคร 10300 </span>
+              <!-- <span class="sm-block"><a href="javascript:void(0)" class="m-l-10 m-r-10">Terms of use</a> <span class="muted">|</span> <a href="javascript:void(0)" class="m-l-10">Privacy Policy</a></span> -->
+            </p>
+            <p class="small no-margin pull-right sm-pull-reset">
+              อีเมล: webmaster@exise.go.th <span class="hint-text">โทรศัพท์ 02 241 5600</span>
+            </p>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+     
+    </ng-template>
+    <!-- END COPYRIGHT -->
+  </div>
+  <!-- END PAGE CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTAINER -->
+<app-search-overlay></app-search-overlay>
+<app-quickview></app-quickview>

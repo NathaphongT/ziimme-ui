@@ -1,0 +1,25 @@
+.page-sidebar .sidebar-menu .menu-items {
+    &>li ul.sub-menu {
+        background-color: inherit;
+        margin: 0;
+        padding: 0;
+        // & > :first-child{
+        //     margin-top: -5px;
+        // }
+        // & > :last-child{
+        //     margin-bottom: -10px;
+        // }
+        li {
+            padding: 0px;
+            a {
+                padding-left: 40px;
+                margin: 0px 10px;
+            }
+        }
+    }
+}
+
+.sub-menu {
+    margin-top: -20px;
+    margin-bottom: -20px;
+}

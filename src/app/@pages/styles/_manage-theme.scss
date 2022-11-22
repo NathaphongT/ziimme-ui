@@ -1,0 +1,560 @@
+@import './manage-colors';
+$font-name: 'Kanit';
+html,
+body {
+    background-color: $white;
+}
+
+
+/* Style font-size */
+
+.fs {
+    &-h1 {
+        font-size: 36px;
+        font-weight: 200;
+        &-bold {
+            font-size: 36px;
+            font-family: $font-name;
+            font-weight: 600;
+        }
+    }
+    &-h2 {
+        font-size: 32px;
+        font-weight: 200;
+        &-bold {
+            font-size: 32px;
+            font-family: $font-name;
+            font-weight: 600;
+        }
+    }
+    &-h3 {
+        font-size: 26px;
+        font-weight: 200;
+        &-bold {
+            font-size: 26px;
+            font-family: $font-name;
+            font-weight: 600;
+        }
+    }
+    &-h4 {
+        font-size: 24px;
+        font-weight: 200;
+        &-bold {
+            font-size: 24px;
+            font-family: $font-name;
+            font-weight: 600;
+        }
+    }
+    &-h5 {
+        font-size: 20px;
+        font-weight: 200;
+        &-bold {
+            font-size: 20px;
+            font-family: $font-name;
+            font-weight: 600;
+        }
+    }
+    &-h6 {
+        font-size: 16px;
+        font-weight: 200;
+        &-bold {
+            font-size: 16px;
+            font-family: $font-name;
+            font-weight: 600;
+        }
+    }
+    &-p {
+        font-size: 14px;
+        font-weight: 200;
+        &-bold {
+            font-size: 14px;
+            font-family: $font-name;
+            font-weight: 600;
+        }
+    }
+    &-title {
+        font-size: 36px;
+        font-weight: 200;
+        &-bold {
+            font-size: 36px;
+            font-family: $font-name;
+            font-weight: 600;
+        }
+    }
+}
+
+.font-name {
+    font-family: $font-name;
+}
+
+
+/* Style color */
+
+// text
+.cl {
+    &-default {
+        color: $main;
+    }
+    &-second {
+        color: $second;
+    }
+    &-success {
+        color: $success;
+    }
+    &-danger {
+        color: $denger-dark;
+    }
+    &-danger-dark {
+        color: $denger-light;
+    }
+    &-warning {
+        color: $warning;
+    }
+    &-white {
+        color: $white;
+    }
+    &-black {
+        color: $black;
+    }
+}
+
+// background color
+.bg-cl {
+    &-default {
+        background-color: $main;
+    }
+    &-second {
+        background-color: $second;
+    }
+    &-white {
+        background-color: $white;
+    }
+}
+
+
+/* Style color of button */
+
+@mixin btn-style-base {
+    width: 100px!important;
+    height: 40px!important;
+    border-radius: 8px!important;
+    i {
+        margin-right: 10px!important;
+    }
+}
+
+.cbtn {
+    &-default {
+        @include btn-style-base;
+        background-color: $main!important;
+        color: $white!important;
+        transition: 0.7s!important;
+        &:hover {
+            background-color: $white!important;
+            color: $main!important;
+            transition: 0.7s!important;
+        }
+    }
+    &-second {
+        @include btn-style-base;
+        background-color: $second!important;
+        color: $white!important;
+        transition: 0.7s!important;
+        &:hover {
+            background-color: $white!important;
+            color: $second!important;
+            transition: 0.7s!important;
+        }
+    }
+    &-outline-main {
+        @include btn-style-base;
+        background-color: $white!important;
+        color: $main!important;
+        border: 1px solid $main!important;
+        border-radius: 6px!important;
+        transition: 0.7s!important;
+        &:hover {
+            background-color: $main!important;
+            color: $white!important;
+            border: 1px solid $main!important;
+            transition: 0.7s!important;
+        }
+    }
+    &-icon-right {
+        position: absolute;
+        top: 20%; // compatable with box height 40px.
+        right: 10px;
+        border: none;
+        background-color: inherit!important;
+    }
+    &-noti {
+        @include btn-style-base;
+        background-color: #fff !important;
+        color: #15518C !important;
+        border-bottom: 2px #15518C !important;
+        transition: 0.7s !important;
+    }
+    &-shadow {
+        color: $main;
+        transition: 0.7s;
+        background-color: #ffffff;
+        border: 1px solid #f4f4f4;
+        border-radius: 10px;
+        padding: 10px 15px;
+        font-weight: bold;
+        -webkit-box-shadow: 0px 5px 10px 0px rgba(220, 220, 220, 1);
+        -moz-box-shadow: 0px 5px 10px 0px rgba(220, 220, 220, 1);
+        box-shadow: 0px 5px 10px 0px rgba(220, 220, 220, 1);
+        &:hover {
+            border: 1px solid $main;
+        }
+        &.active {
+            background-color: #F7FBFF!important;
+            border: 1px solid $main;
+        }
+    }
+}
+
+// social color
+.social {
+    &-facebook {
+        color: $facebook;
+    }
+    &-youtube {
+        color: $youtube;
+    }
+}
+
+// line of block
+.block-line {
+    &-right {
+        border-right: 2px solid $grey11;
+    }
+    &-left {
+        border-left: 2px solid $grey11;
+    }
+    &-bottom {
+        border-bottom: 2px solid $grey11;
+    }
+    &-top {
+        border-top: 2px solid $grey11;
+    }
+}
+
+
+/* Style Card */
+
+.ccard {
+    &-tab {
+        background: $grey16;
+    }
+    &-b-a {
+        border-radius: 8px;
+    }
+    &-b-l {
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+    &-b-r {
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+    &-white-shadow {
+        padding: 15px;
+        border-radius: 8px;
+        background-color: $white;
+        -webkit-box-shadow: 0px 10px 30px 0px rgba(220, 220, 220, 1);
+        -moz-box-shadow: 0px 10px 30px 0px rgba(220, 220, 220, 1);
+        box-shadow: 0px 10px 30px 0px rgba(220, 220, 220, 1);
+        &img {
+            background-color: #dddddd;
+        }
+    }
+}
+
+
+/* Style Modal: Overwite on default */
+
+.modal {
+    &-header {
+        min-height: 50px;
+        border: 4px solid $main;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        background-color: $main;
+    }
+    &-body {
+        padding-top: 25px!important;
+    }
+    &-content {
+        border: none!important;
+        border-radius: 8px!important;
+    }
+    .close {
+        top: 13px !important;
+    }
+}
+
+
+/* Style Badge */
+
+.cbadge {
+    &-default {
+        background-color: $main-bright2;
+        color: $main-light2;
+    }
+}
+
+.outline-block {
+    &-content {
+        .bc-content {
+            height: 60px;
+            overflow: hidden;
+        }
+        .date {
+            color: $grey5;
+            font-size: 12px;
+        }
+        .name {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+}
+
+
+/* Style Block Show Images */
+
+.image-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &.default {
+        background-color: $grey5;
+        img {
+            height: 30%;
+        }
+    }
+}
+
+
+/* Style input */
+
+.cinput {
+    &-default {
+        border: none;
+        height: 35px;
+        padding: 5px 10px;
+        font-family: $font-name;
+    }
+    &-radius {
+        border-radius: 8px!important;
+    }
+    &-radius-left {
+        border-top-left-radius: 8px!important;
+        border-bottom-left-radius: 8px!important;
+    }
+    &-radius-right {
+        border-top-right-radius: 8px!important;
+        border-bottom-right-radius: 8px!important;
+    }
+}
+
+
+/* ------ START ------
+* Custom style from class exist and create new, Purpose for change to new style. 
+*/
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.input {
+    &-font {
+        font-family: $font-name;
+        font-weight: 400;
+    }
+    &-search {
+        background: $white;
+        border-top: 0.5px solid $grey5;
+        border-bottom: 0.5px solid $grey5;
+        &-label {
+            background-color: $white!important;
+            text-align: left!important;
+        }
+    }
+    &-block-shadow {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1)!important;
+    }
+}
+
+// Header
+.header {
+    .search-link {
+        opacity: 1;
+        color: $warning;
+        font-size: 1.1rem;
+    }
+}
+
+// Sidebar
+.sidebar-user {
+    border-bottom: 1px solid $white;
+    margin: 10px 20px;
+    padding: 10px 0px 20px 0px;
+    color: $white;
+    position: relative;
+    .user-img {
+        width: 50px;
+        height: 50px;
+        // border-radius: 10px;
+        // border: 1px solid $white;
+    }
+    span {
+        font-size: 0.8rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .ps-0 {
+        padding-left: 0px;
+    }
+    .toggle-menu {
+        position: absolute;
+        top: 20%;
+        right: -35px; // -35
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $black;
+        background-color: $warning;
+        box-shadow: 0px 0px 6px 2px rgba(252, 176, 52, 0.3);
+        i {
+            transition: 0.7s;
+        }
+        &:hover {
+            background-color: $second!important;
+            i {
+                transform: rotate(-180deg);
+                transition: 0.7s;
+            }
+        }
+    }
+}
+
+// Notification
+.cnoti {
+    &-panel {
+        background-color: $grey17;
+    }
+    &-body {
+        overflow-y: scroll;
+        height: 220px;
+    }
+    &-item {
+        margin-left: 0px!important;
+        background-color: $grey17!important;
+        padding: 10px!important;
+        a {
+            color: $black!important;
+            line-height: 20px!important;
+        }
+        &:hover {
+            background-color: $white!important;
+            .heading {
+                background-color: $white!important;
+                &:after {
+                    background-color: $white!important;
+                }
+            }
+        }
+        .heading {
+            background-color: $grey17!important;
+            &:after {
+                background-color: $grey17!important;
+            }
+        }
+    }
+}
+
+// Footer
+.cfooter {
+    &-bg {
+        background-color: $grey15;
+    }
+}
+
+// Navbar
+.navbar-logo {
+    margin-left: 60px;
+}
+
+// Page Title
+.cpagetitle {
+    padding: 0px 40px;
+    background-color: $grey16;
+}
+
+// Input search (on navbar)
+.wrap-search {
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+// PG
+input::placeholder,
+textarea::placeholder,
+.pg-select-selection__placeholder,
+.pg-select-search__field__placeholder::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: 'Kanit'!important;
+    opacity: 1;
+    /* Firefox */
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+.pg-select-selection__placeholder,
+.pg-select-search__field__placeholder:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-family: 'Kanit'!important;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder,
+.pg-select-selection__placeholder,
+.pg-select-search__field__placeholdert::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-family: 'Kanit'!important;
+}
+
+
+/* ------ END ------ */
+
+
+/* Responsive Style */
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .page-sidebar {
+        overflow: initial;
+    }
+}
